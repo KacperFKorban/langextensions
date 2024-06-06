@@ -9,12 +9,11 @@ Implement a program that processes two types of events for a zoo's animal popula
 ### Functionality
 
 Update Event:
-
 Adds or updates information about an animal.
 Updates will be given in the form of an event containing the animal's ID, species, age, and height.
 If an animal with the given ID already exists, its information should be updated with the new data provided.
-Query Event:
 
+Query Event:
 Responds to a query requesting specific information about the animal population.
 Possible queries include:
 Sum or average age of animals filtered by species or other criteria.
