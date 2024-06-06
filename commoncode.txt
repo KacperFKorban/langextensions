@@ -1,0 +1,16 @@
+case class Animal(id: String, species: String, age: Int, height: Float)
+enum AttributeType:
+  case Age, Height
+enum AggregationType:
+  case Sum, Average
+enum QueryFilter:
+  case Species(species: String)
+  case Age(age: Int)
+  case Height(height: Float)
+enum Event:
+  case AddAnimal(animalId: String, species: String, age: Int, height: Float)
+  case Query(resultAttribute: AttributeType, aggType: AggregationType, filters: List[QueryFilter])
+enum Result:
+  case Height(value: Float)
+  case Age(value: Int)
+  case Unit
