@@ -110,3 +110,4 @@ Hard rules:
 - The solution has to use at least 3 language extensions
 - The solution has to solve the problem (pass all tests). Yes, you can hardcode all the test if you find that to be the best solution :D
 - The solution can use any version of Scala 3 (stable or not)
+- No unused code. Some language constructs will most likely not be very useful and that's fine. They just need to be part of the solution.
