@@ -1,0 +1,27 @@
+\frametitle{multipleAssignments --- Motivation}
+
+  With the new proposal, it can be rewritten as:
+
+  \begin{lstlisting}
+  class FibonacciIterator() extends Iterator[Int]:
+    private var a: Int = 0
+    private var b: Int = 1
+
+    def hasNext = true
+    def next() =
+      val r = a
+      (a, b) = (b, a + b)
+      r
+  \end{lstlisting}
+
+  \pause\
+
+  Acceptance criteria:
+  \begin{itemize}
+    \item single level tuple on the left
+    \item any expression that returns a tuple of the correct type on the right
+  \end{itemize}
+
+  % Acceptane criteria:
+  % - single level tuple on the left
+  % - any expression that returns a tuple of the correct type on the right

@@ -10,14 +10,13 @@ final class On extends State
 final class Off extends State
 
 @scala.annotation.implicitNotFound("State must be Off")
-class IsOff[S <: State]
+erased class IsOff[S <: State]
 object IsOff:
   given isOff: IsOff[Off] = new IsOff[Off]
 
 class Machine[S <: State]:
-  def turnedOn(using erased IsOff[S]): Machine[On] = new Machine[On]
+  def turnedOn(using IsOff[S]): Machine[On] = new Machine[On]
 
 def soStuff =
   val m = new Machine[Off]
   m.turnedOn//.turnedOn
-

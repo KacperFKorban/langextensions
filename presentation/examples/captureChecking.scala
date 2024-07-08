@@ -4,10 +4,9 @@
 
 import scala.language.experimental.captureChecking
 
-class FileOutputStream(file: String) {
-  def close(): Unit = ???
-  def write[A](a: A): Unit = ???
-}
+class FileOutputStream(name: String):
+  def close(): Unit = println(s"closing $name")
+  def write(b: Int): Unit = println(s"writing $b to $name")
 
 def usingLogFile[T](op: FileOutputStream^ => T): T =
   val logFile = FileOutputStream("log")
@@ -15,4 +14,6 @@ def usingLogFile[T](op: FileOutputStream^ => T): T =
   logFile.close()
   result
 
-def logFileUsage = usingLogFile { f => () => f.write(0) }
+def usg6 =
+  val later = usingLogFile { file => () => file.write(0) }
+  later() // crash

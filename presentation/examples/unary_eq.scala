@@ -1,4 +1,4 @@
-//> using scala 3.3.3
+//> using scala 3.nightly
 
 /**
   * Links:
@@ -12,7 +12,11 @@ class ClassWithAGetterAndASetter:
   def value: Int = _value
   def value_=(newValue: Int): Unit = _value = newValue
 
-class XD(private var i: Int):
+class ClassWithUnaryOp:
+  private var i: Int = 1
+  def unary_! : Int = -i
+
+class AClass(private var i: Int):
   def unary_! : Int = i
   def `unary_!_=`(i: Int): Unit = this.i = i
 
@@ -25,10 +29,14 @@ def eqUsage =
 
   println(c.value)
 
-  val xd = XD(1)
+  val cwo = ClassWithUnaryOp()
 
-  println(!xd)
+  println(!cwo) // -1
 
-  !xd = 2 // xd.`unary_!_=`(2)
+  val ac = AClass(1)
 
-  println(!xd)
+  println(!ac)
+
+  !ac = 2 // ac.`unary_!_=`(2)
+
+  println(!ac)

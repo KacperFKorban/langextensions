@@ -1,4 +1,4 @@
-//> using scala 3.3.3
+//> using scala 3.nightly
 //> using lib "com.lihaoyi::os-lib:0.10.2"
 
 import scala.sys.process._

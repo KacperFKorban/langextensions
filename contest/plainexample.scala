@@ -1,4 +1,4 @@
-//> using scala 3.3.3
+//> using scala 3.nightly
 
 // END HEADER
 

@@ -1,6 +1,5 @@
-//> using scala 3.5.1-RC1-bin-SNAPSHOT
+//> using scala 3.nightly
 //> using options -feature -Xfatal-warnings
 //> using options -source:future
-//> using options -Xprint:typer
 
-import scala.language.experimental.betterFors
+import scala.language.experimental.captureChecking

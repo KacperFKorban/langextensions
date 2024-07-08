@@ -11,7 +11,6 @@ enum MyList[+A]:
   def toList: List[A] = this match
     case MyNil => Nil
     case MyCons(h, t) => h +: t.toList
-  
 
 given [A]: Conversion[MyList[A], List[A]] =
   (x: MyList[A]) => x.toList
@@ -19,6 +18,10 @@ given [A]: Conversion[MyList[A], List[A]] =
 def loopOver[A](it: into List[A])(f: A => Unit): Unit =
   it.iterator.foreach(f)
 
+def loopAggr[A](it: List[A])(f: into A => List[A]): List[A] =
+  it.iterator.foldLeft(List.empty[A])((acc, x) => acc ++ f(x))
+
 def intoUsage =
   val myLst = MyList.MyCons(1, MyList.MyNil)
   loopOver(myLst)(x => println(x))
+  loopAggr(myLst.toList)(x => MyList.MyCons(x, MyList.MyNil))

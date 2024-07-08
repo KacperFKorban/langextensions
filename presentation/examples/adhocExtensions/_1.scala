@@ -1,4 +1,4 @@
-//> using scala 3.3.3
+//> using scala 3.nightly
 //> using options -feature -Xfatal-warnings
 //> using options -source:future
 

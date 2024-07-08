@@ -54,7 +54,7 @@ However, the solutions will be evaluated based on the amount of language extensi
 To make it easier to focus on the language extensions, here is an example solution that solves the problem without using any language extensions:
 
 ```scala
-//> using scala 3.3.3
+//> using scala 3.nightly
 
 // END HEADER
 
@@ -124,7 +124,7 @@ Language imports do not count as part of the code length.
 The solution must be submitted as a single Scala file, with the following structure:
 
 ```scala
-//> using scala 3.3.3
+//> using scala 3.nightly
 
 import scala.language.implicitConversions
 import scala.language.dynamics
