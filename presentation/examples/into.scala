@@ -18,7 +18,7 @@ given [A]: Conversion[MyList[A], List[A]] =
 def loopOver[A](it: into List[A])(f: A => Unit): Unit =
   it.iterator.foreach(f)
 
-def loopAggr[A](it: List[A])(f: into A => List[A]): List[A] =
+def loopAggr[A](it: List[A])(f: A => into List[A]): List[A] =
   it.iterator.foldLeft(List.empty[A])((acc, x) => acc ++ f(x))
 
 def intoUsage =
